@@ -148,7 +148,7 @@ For example  in `package.json` file:
     "react-dom": "^18.2.0"
   }
 ```
-
+(to allow newer versions of the package than the one specified 👇🏻)
 * **~** : `Approximately equivalent to version`, will update you to all future patch versions, without incrementing the minor version.
 * **^** : `Compatible with version`, will update you to all future minor/patch versions, without incrementing the major version.
 
