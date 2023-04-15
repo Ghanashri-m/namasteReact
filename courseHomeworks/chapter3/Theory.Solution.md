@@ -7,6 +7,14 @@ JSX allows us to write HTML elements in JavaScript and place them in the DOM wit
 JSX makes it easier to write and add HTML in React.
 JSX converts HTML tags into react elements.
 
+My Definition: 
+- JSX allows us to write HTML `like` syntax in JS
+- Babel like transpilers understand and convert JSX to React.creatElement like syntax, because browsers - inherently do not understand JSX.
+- Under the hood, JSX implements React.createElement
+- React understands React.createElement and converts this in to an object
+- Browser understands the object and converts it in to HTML DOM element
+
+
 ### Example 1 using JSX:
 ```
 const myElement = <h1>I Love JSX!</h1>;

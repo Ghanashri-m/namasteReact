@@ -1,0 +1,66 @@
+#root {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    /* For one line content center alignment */
+    /* text-align: center;
+    line-height: 100vh; */
+
+    /* For multiline content center alignment */
+    display: flex;
+    flex-direction: column;
+}
+
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+html {
+    height: 100%;
+}
+
+.header {
+    background-color: #1a202c;
+    padding: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 70%;
+}
+
+.logo-container {
+    display: flex;
+    width: 25%;
+    justify-content: space-evenly;
+}
+
+.logo {
+    height: 64px;
+}
+
+.app-name {
+    color: #fff;
+    margin-bottom: 0;
+}
+
+.search-bar {
+    width : 70%;  
+    height: 48px;
+}
+
+.icon-group {
+    width: 30%;
+    display: flex;
+    justify-content: flex-end;
+}
