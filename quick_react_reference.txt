@@ -1,0 +1,174 @@
+1. How does React's Virtual DOM work, and what are its advantages over the real DOM?
+
+React's Virtual DOM is a lightweight copy of the actual DOM.
+When state changes, React creates a new Virtual DOM representation and compares it with the previous one. 
+Only the differences are updated in the real DOM, reducing the need for expensive DOM manipulations.
+
+2. Explain the role of keys in React lists and why they are essential.
+
+Keys help React identify each list item uniquely and efficiently update and re-render components when the list changes. 
+They improve performance by minimizing re-renders and avoiding issues like incorrect component recycling.
+
+Code Example: (In the absence of key attribute, Whole list will re render, if any 1 list item in the list changes.)
+
+// Without keys
+const itemsWithoutKeys = items. map((item) => <li>{item}</li>);
+
+// With unique ids as keys
+const itemsWithKeys = items. map((item) => <li key={items.id}>{item}</li>);
+
+3. Explain the concept of higher-order components (HOCs) in React.
+
+Higher-order components are functions that take a component as an input and return an enhanced component with additional props or functionality. 
+They are commonly used for code reuse, logic abstraction, and cross-cutting concerns.
+
+Code example:
+
+const withLogger = (WrappedComponent) => {
+ const EnhancedComponent = (props) => {
+  console.log('Component props:', props);
+  return <WrappedComponent {...props} />;
+ };
+
+ return EnhancedComponent;
+};
+
+// Usage
+const MyComponent = (props) => {
+ // Component logic here
+};
+
+export default withLogger(MyComponent);
+
+4. What is the significance of React Fragments, and when should you use them?
+
+React Fragments allow you to group multiple components without introducing an additional parent element in the DOM. 
+They are useful when you need to return multiple elements from a component's render method.
+
+Code example:
+
+import React, { Fragment } from 'react';
+
+const MyComponent = () => {
+ return (
+  <Fragment>
+   <h1>Title</h1>
+   <p>Paragraph 1</p>
+   <p>Paragraph 2</p>
+  </Fragment>
+ );
+};
+
+5. What are React hooks? Explain the difference between useState and useEffect.
+
+React hooks are functions that allow you to use state and lifecycle features in functional components.
+useState is used to manage state, while useEffect is used to handle side effects like fetching data or subscribing to events.
+
+💡 Code Example:
+const [count, setCount] = useState(0);
+
+useEffect(() => {
+ document.title = `Count: ${count}`;
+}, [count]);
+
+6. What is the Context API in React? How can it be used to manage global state?
+
+Context API provides a way to share data between components without passing it through props. 
+It's useful for managing global state. You create a context using createContext and provide it at a higher level. 
+Consumers can access the context using useContext.
+
+Code Example:
+const ThemeContext = createContext();
+
+function App() {
+ return (
+  <ThemeContext.Provider value="dark">
+   <Component />
+  </ThemeContext.Provider>
+ );
+}
+
+function Component() {
+ const theme = useContext(ThemeContext);
+ // Use theme value here
+}
+
+7. What are React render props? How do they enable component composition and code reusability?
+
+Render props is a pattern where a component accepts a function as a prop and calls it to render content. 
+It enables component composition and code reusability by allowing components to share their internal state or behavior with other components.
+
+Code Example:
+function MouseTracker({ render }) {
+ const [position, setPosition] = useState({ x: 0, y: 0 });
+
+ useEffect(() => {
+  const handleMouseMove = (event) => {
+   setPosition({ x: event.clientX, y: event.clientY });
+  };
+
+  window.addEventListener('mousemove', handleMouseMove);
+
+  return () => {
+   window.removeEventListener('mousemove', handleMouseMove);
+  };
+ }, []);
+
+ return render(position);
+}
+
+8. How can you optimize performance in a React application?
+
+Discuss techniques like memoization, code splitting, and lazy loading.
+
+Performance optimization techniques include memoization with useMemo and useCallback to avoid unnecessary recalculations, 
+code splitting to split the bundle into smaller chunks, 
+and lazy loading to load components or resources only when needed.
+
+⚡️ Code Example:
+const memoizedValue = useMemo(() => computeExpensiveValue(a, b), [a, b]);
+
+const handleClick = useCallback(() => {
+ // Handle click event
+}, []);
+
+Lazy loading is the technique of rendering only-needed or critical user interface items first, then quietly unrolling the non-critical items later.
+With lazy loading the bundle can be split to smaller chunks where the most important chunk can be loaded first and then every other secondary one lazily loaded.
+
+Suspense is a component required by the lazy function basically used to wrap lazy components. Multiple lazy components can be wrapped with the suspense component. 
+It takes a fallback property that accepts the react elements you want to render as the lazy component is being loaded.
+
+0. What is Lifting State Up in React?
+2. What are different ways to add CSS in your app?
+3. What is Hot Module Replacement?
+4. What is the use of Parcel, Vite, Webpack?
+5. How does create-react-app work?
+6. What is Tree Shaking?
+7. Difference b/w dependency and devDependency
+8. What is npx and npm?
+9. Difference b/w package .json and package-lock .json
+10. Difference between console .log(<HeaderComponent/>) and console .log(HeaderComponent());
+12. What is the purpose of dependency array in useEffect? What is the difference when it is used and when it is not used?
+13. What if 2 components are given will the state change in one component will effect the other component’s state (child)?
+14. What is the use of return in useEffect ?
+15. Difference b/w client-side routing and server-side routing?
+16. Explain the concept of code splitting and its benefits in React.
+17. How does React handle routing and navigation?
+19. What are controlled and uncontrolled components?
+20. Explain the concept of reconciliation in React.
+1. How does React Fiber improve performance in React applications?
+3. What are the key differences between server-side rendering (SSR) and client-side rendering (CSR) in React?
+4. Describe the concept of render props and its use cases in React.
+5. How can you optimize the rendering of large lists in React?
+6. Explain the concept of memoization and its importance in React.
+7. What is the purpose of the useEffect() hook in React and how does it work?
+9. How can you handle asynchronous operations in React using async/await?
+10. Explain the concept of the Context API in React and its benefits.
+12. Describe the concept of controlled and uncontrolled components in React forms.
+13. How does React handle state management in large-scale applications?
+14. Explain the concept of suspense in React and its use cases.
+15. What are the different ways to handle side effects in React using hooks?
+17. How can you prevent unnecessary re-renders in React?
+18. What are the different ways to style components in React?
+19. What are the key considerations when implementing a scalable React application?
+20. Describe the concept of reusability, modularity, testablity in React components.
