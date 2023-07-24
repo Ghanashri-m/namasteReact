@@ -156,6 +156,7 @@ It takes a fallback property that accepts the react elements you want to render 
 17. How does React handle routing and navigation?
 19. What are controlled and uncontrolled components?
 20. Explain the concept of reconciliation in React.
+
 1. How does React Fiber improve performance in React applications?
 3. What are the key differences between server-side rendering (SSR) and client-side rendering (CSR) in React?
 4. Describe the concept of render props and its use cases in React.
@@ -164,11 +165,11 @@ It takes a fallback property that accepts the react elements you want to render 
 7. What is the purpose of the useEffect() hook in React and how does it work?
 9. How can you handle asynchronous operations in React using async/await?
 10. Explain the concept of the Context API in React and its benefits.
-12. Describe the concept of controlled and uncontrolled components in React forms.
-13. How does React handle state management in large-scale applications?
-14. Explain the concept of suspense in React and its use cases.
-15. What are the different ways to handle side effects in React using hooks?
-17. How can you prevent unnecessary re-renders in React?
-18. What are the different ways to style components in React?
-19. What are the key considerations when implementing a scalable React application?
-20. Describe the concept of reusability, modularity, testablity in React components.
+11. Describe the concept of controlled and uncontrolled components in React forms.
+12. How does React handle state management in large-scale applications?
+13. Explain the concept of suspense in React and its use cases.
+14. What are the different ways to handle side effects in React using hooks?
+15. How can you prevent unnecessary re-renders in React?
+16. What are the different ways to style components in React?
+17. What are the key considerations when implementing a scalable React application?
+18. Describe the concept of reusability, modularity, testablity in React components.
